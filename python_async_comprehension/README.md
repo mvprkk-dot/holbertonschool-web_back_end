@@ -21,17 +21,9 @@
 - All your functions should have a documentation `(python3 -c 'print(__import__("my_module").my_function.__doc__)`'
 - All your functions and coroutines must be type-annotated.
 
-## Contributing
-
--- Santiago Yanguas - Holberton Student
-
 ## Versioning
 
 For my learning of backend web dev in Holberton School
-
-## Authors
-
----Santiago Yanguas 946@holbertonshcool.com
 
 ## Files
 
