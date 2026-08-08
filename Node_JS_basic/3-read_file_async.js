@@ -8,18 +8,12 @@ const countStudents = (dataPath) => new Promise((resolve, reject) => {
     }
 
     const lines = data.split('\n').filter((line) => line.trim().length > 0);
-
-    if (lines.length <= 1) {
-      console.log('Number of students: 0');
-      resolve(true);
-      return;
-    }
-
     const studentLines = lines.slice(1);
-    console.log(`Number of students: ${studentLines.length}`);
+
+    const output = [];
+    output.push(`Number of students: ${studentLines.length}`);
 
     const fields = {};
-
     studentLines.forEach((line) => {
       const studentData = line.split(',');
       const firstname = studentData[0];
@@ -34,10 +28,10 @@ const countStudents = (dataPath) => new Promise((resolve, reject) => {
     });
 
     Object.keys(fields).forEach((field) => {
-      console.log(`Number of students in ${field}: ${fields[field].length}. List: ${fields[field].join(', ')}`);
+      output.push(`Number of students in ${field}: ${fields[field].length}. List: ${fields[field].join(', ')}`);
     });
 
-    resolve(true);
+    resolve(output);
   });
 });
 
